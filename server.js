@@ -9,6 +9,7 @@ const app = express()
 
 // Configure the app (app.set)
 
+app.set("view engine", "ejs")
 
 
 // Mount Middleware (app.use)
@@ -16,6 +17,13 @@ const app = express()
 
 
 // Mount routes
+app.get("/home", function (req, res) {
+  res.render("home")
+})
+
+app.get("/", function (req, res) {
+  res.redirect("/home")
+})
 
 app.get('/students', function(req, res) {
   res.render('students/index', {
