@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home Pagge</h1>
+    <h1>Students</h1>
+    <ul>
+    <% students.forEach(students => { %>
+        <li>
+        <%= students.firstName.lastName %> 
+        - 
+        <%= students.student ? 'student' : 'not student' %>
+        </li>
+    <% }) %>
+    </ul>
 </body>
 </html>
